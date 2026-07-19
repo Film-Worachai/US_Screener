@@ -1,0 +1,28 @@
+name: US Stock Scanner Bot
+
+on:
+  repository_dispatch:
+    types: [run-scanner-bot] # รับคำสั่งจาก cron-job.org
+  workflow_dispatch: # สำหรับกดรันเอง (Manual)
+
+jobs:
+  scan-stocks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18' # ใช้ Node.js เวอร์ชัน 18
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run Scanner Script
+        env:
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+        run: node index.js # แก้ชื่อไฟล์ให้ตรงกับไฟล์โค้ดหลักของคุณ (เช่น index.js หรือ scanner.js)

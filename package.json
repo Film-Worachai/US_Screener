@@ -1,0 +1,12 @@
+{
+  "name": "us-stock-scanner",
+  "version": "1.0.0",
+  "description": "US Stock Scanner Bot",
+  "main": "index.js",
+  "dependencies": {
+    "@mathieuc/tradingview": "^3.2.0",
+    "node-telegram-bot-api": "^0.64.0",
+    "technicalindicators": "^3.1.0",
+    "yahoo-finance2": "^2.8.2"
+  }
+}
