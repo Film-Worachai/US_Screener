@@ -3,10 +3,23 @@
   "version": "1.0.0",
   "description": "US Stock Scanner Bot",
   "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "tradingview",
+    "scanner",
+    "set",
+    "elliott-wave",
+    "telegram-bot"
+  ],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "@mathieuc/tradingview": "^3.2.0",
-    "node-telegram-bot-api": "^0.64.0",
+    "node-telegram-bot-api": "^0.66.0",
     "technicalindicators": "^3.1.0",
-    "yahoo-finance2": "^2.8.2"
+    "yahoo-finance2": "^3.15.4"
   }
 }
